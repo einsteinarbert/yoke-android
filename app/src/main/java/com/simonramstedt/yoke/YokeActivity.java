@@ -391,6 +391,9 @@ public class YokeActivity extends Activity implements NsdManager.DiscoveryListen
 
         wv = findViewById(R.id.webView);
         wv.getSettings().setJavaScriptEnabled(true);
+        wv.getSettings().setAllowFileAccess(true);
+        wv.getSettings().setAllowFileAccessFromFileURLs(true);
+        wv.getSettings().setAllowUniversalAccessFromFileURLs(true);
         wv.addJavascriptInterface(new WebAppInterface(this), "Yoke");
 
         mNsdManager = (NsdManager) getSystemService(Context.NSD_SERVICE);
