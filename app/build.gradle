@@ -1,20 +1,22 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 29
+    namespace "com.simonramstedt.yoke"
     defaultConfig {
-        applicationId 'com.simonramstedt.yoke'
-        minSdkVersion 21
-        targetSdkVersion 29
+        applicationId "com.simonramstedt.yoke"
+        minSdkVersion 21 // Adjust as needed (15 is very old and unsupported by many libraries)
+        targetSdkVersion 34 // Update to the latest stable version
+        compileSdk 34
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        debug {
+            debuggable true
+        }
     }
     productFlavors {
     }
@@ -28,5 +30,5 @@ dependencies {
 
 repositories {
     google()
-    jcenter()
+    mavenCentral()
 }

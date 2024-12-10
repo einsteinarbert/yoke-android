@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputType;
 import android.util.Log;
-import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -41,13 +40,10 @@ import java.lang.StackTraceElement;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.ServerSocket;
 import java.net.SocketException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -90,7 +86,7 @@ public class YokeActivity extends Activity implements NsdManager.DiscoveryListen
     private int currentPort = 0; // the value is irrelevant if currentHost is null
 
     private void log(String m) {
-        if (BuildConfig.DEBUG)
+        if (true)
             Log.d("Yoke", m);
     }
 
